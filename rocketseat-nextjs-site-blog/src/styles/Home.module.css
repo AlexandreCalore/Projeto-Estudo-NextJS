@@ -6,14 +6,8 @@
   --button-primary-hover: #383838;
   --button-secondary-hover: #f2f2f2;
 
-  display: grid;
+  @apply grid items-center justify-center min-h-screen px-20 gap-16 font-sans;
   grid-template-rows: 20px 1fr 20px;
-  align-items: center;
-  justify-items: center;
-  min-height: 100svh;
-  padding: 80px;
-  gap: 64px;
-  font-family: var(--font-geist-sans);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -28,10 +22,7 @@
 }
 
 .main {
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-  grid-row-start: 2;
+  @apply flex flex-col gap-8 row-start-2;
 }
 
 .main ol {
@@ -57,28 +48,14 @@
 }
 
 .ctas {
-  display: flex;
-  gap: 16px;
+  @apply flex gap-4;
 }
 
 .ctas a {
-  appearance: none;
-  border-radius: 128px;
+  @apply flex items-center justify-center rounded-full cursor-pointer text-base font-medium transition-colors;
   height: 48px;
   padding: 0 20px;
-  border: none;
   border: 1px solid transparent;
-  transition:
-    background 0.2s,
-    color 0.2s,
-    border-color 0.2s;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 16px;
-  line-height: 20px;
-  font-weight: 500;
 }
 
 a.primary {
@@ -92,23 +69,20 @@ a.secondary {
   min-width: 158px;
 }
 
+/* Footer */
 .footer {
-  grid-row-start: 3;
-  display: flex;
-  gap: 24px;
+  @apply flex gap-6 row-start-3;
 }
 
 .footer a {
-  display: flex;
-  align-items: center;
-  gap: 8px;
+  @apply flex items-center gap-2;
 }
 
 .footer img {
-  flex-shrink: 0;
+  @apply flex-shrink-0;
 }
 
-/* Enable hover only on non-touch devices */
+/* Hovers só em dispositivos que suportam */
 @media (hover: hover) and (pointer: fine) {
   a.primary:hover {
     background: var(--button-primary-hover);
@@ -126,14 +100,14 @@ a.secondary {
   }
 }
 
+/* Responsivo */
 @media (max-width: 600px) {
   .page {
-    padding: 32px;
-    padding-bottom: 80px;
+    @apply px-8 pb-20;
   }
 
   .main {
-    align-items: center;
+    @apply items-center;
   }
 
   .main ol {
@@ -141,13 +115,11 @@ a.secondary {
   }
 
   .ctas {
-    flex-direction: column;
+    @apply flex-col;
   }
 
   .ctas a {
-    font-size: 14px;
-    height: 40px;
-    padding: 0 16px;
+    @apply text-sm h-10 px-4;
   }
 
   a.secondary {
@@ -155,9 +127,7 @@ a.secondary {
   }
 
   .footer {
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
+    @apply flex-wrap items-center justify-center;
   }
 }
 
