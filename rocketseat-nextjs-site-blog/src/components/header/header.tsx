@@ -10,7 +10,7 @@ export const Header = () => {
         <nav className="flex items-center gap-6">
           <ActiveLink href = '/'>Início</ActiveLink>
           <ActiveLink href = '/blog'>Blog</ActiveLink>
-          <Button variant="secondary" className="bg-white" asChild><Link href = "/comecar">Começar</Link></Button>
+          <Button variant="secondary" className="bg-white text-zinc-950" asChild><Link href = "/comecar">Começar</Link></Button>
         </nav>
         </div>
       </div>
